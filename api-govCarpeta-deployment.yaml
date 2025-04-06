@@ -1,0 +1,19 @@
+apiVersion: apps/v1 # Usa apps/v1beta2 para versiones anteriores a 1.9.0
+kind: Deployment
+metadata:
+  name: api-govcarpeta
+spec:
+  selector:
+    matchLabels:
+      app: govcarpeta
+  replicas: 4 # indica al controlador que ejecute 3  pods
+  template:
+    metadata:
+      labels:
+        app: govcarpeta
+    spec:
+      containers:
+        - name: api-govcarpeta
+          image: icr.io/eafit/api-govcarpeta:v7
+          ports:
+            - containerPort: 3000

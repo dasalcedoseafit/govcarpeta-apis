@@ -1,0 +1,152 @@
+[
+    {
+        "_id": "5f9a7352875a1d001bf60d02",
+        "identification": 1234567890,
+        "name": "Carlos Andres Caro",
+        "address": "Cra 54 # 45 -67",
+        "email": "caro@mymail.com",
+        "operatorId": 0,
+        "operatorName": "Operador Ciudadano",
+        "__v": 0
+    },
+    {
+        "_id": "5f9adaea2ab6e100152125e5",
+        "identification": 9876543210,
+        "name": "Germán Peña",
+        "address": "Calle 123",
+        "email": "gdpenaa@eafit.edu.co",
+        "operatorId": 0,
+        "operatorName": "Operador Germanus",
+        "__v": 0
+    },
+    {
+        "_id": "5f9af6722ab6e100152125e8",
+        "identification": 11036544890,
+        "name": "Andres Zapata",
+        "address": "Itagui",
+        "email": "david@hotmail.com",
+        "operatorId": 0,
+        "operatorName": "MiCarpeta",
+        "__v": 0
+    },
+    {
+        "_id": "5f9af6cd2ab6e100152125ea",
+        "identification": 9235843356,
+        "name": "Hall G. Norris",
+        "address": "Ten Street",
+        "email": "test@test.com",
+        "operatorId": 0,
+        "operatorName": "MyOperator",
+        "__v": 0
+    },
+    {
+        "_id": "5f9b27f32ab6e100152125ee",
+        "identification": 3939766415,
+        "name": "One Citizen",
+        "address": "One Citizen Direction",
+        "email": "onecitizensmail@gmail.com",
+        "operatorId": 0,
+        "operatorName": "oneHundredOperator",
+        "__v": 0
+    },
+    {
+        "_id": "5f9b4fe72ab6e100152125f5",
+        "identification": 1010101010,
+        "name": "Carlos Andres Caro",
+        "address": "Cra 54 # 45 -67",
+        "email": "caro@mymail.com",
+        "operatorId": 0,
+        "operatorName": "Operador Ciudadano",
+        "__v": 0
+    },
+    {
+        "_id": "5f9b50062ab6e100152125f7",
+        "identification": 1010101011,
+        "name": "Carlos Andres Caro",
+        "address": "Cra 54 # 45 -67",
+        "email": "caro@mymail.com",
+        "operatorId": 0,
+        "operatorName": "Operador Ciudadano",
+        "__v": 0
+    },
+    {
+        "_id": "5f9b50192ab6e100152125f8",
+        "identification": 1010101111,
+        "name": "Carlos Andres Caro",
+        "address": "Cra 54 # 45 -67",
+        "email": "caro@mymail.com",
+        "operatorId": 0,
+        "operatorName": "Algun operador",
+        "__v": 0
+    },
+    {
+        "_id": "5f9c31f32ab6e100152125fc",
+        "identification": 1039473919,
+        "name": "Sergio Andres Rojas",
+        "address": "Calle 5 # 55 - 20",
+        "email": "sergiorojas12ocm@gmail.com",
+        "operatorId": 0,
+        "operatorName": "CoolOperator",
+        "__v": 0
+    },
+    {
+        "_id": "5f9c32772ab6e100152125fd",
+        "identification": 1037777716,
+        "name": "Pedro Bayley",
+        "address": "Cra 57 # 44 -65",
+        "email": "pedrin@mymail.com",
+        "operatorId": 0,
+        "operatorName": "Operador de Pedro",
+        "__v": 0
+    },
+    {
+        "_id": "5f9c38d52ab6e100152125ff",
+        "identification": 1037777416,
+        "name": "Pedro Bayley",
+        "address": "Cra 57 # 44 -65",
+        "email": "pedrin@mymail.com",
+        "operatorId": 0,
+        "operatorName": "Operador de Pedro2",
+        "__v": 0
+    },
+    {
+        "_id": "5f9c4b482ab6e10015212602",
+        "identification": 1232421234,
+        "name": "Rayo Mcqueen",
+        "address": "Ruta 66",
+        "email": "RayoMcq8@operadorBCQ.com",
+        "operatorId": 0,
+        "operatorName": "OperadorBCQ",
+        "__v": 0
+    },
+    {
+        "_id": "5f9c4d332ab6e10015212605",
+        "identification": 1938465718,
+        "name": "PruebaUsuario",
+        "address": "dirección prueba",
+        "email": "PruebaU2@operadorBCQ.com",
+        "operatorId": 0,
+        "operatorName": "OperadorBCQ",
+        "__v": 0
+    },
+    {
+        "_id": "5f9ca6b12ab6e10015212607",
+        "identification": 2342523532,
+        "name": "prueba prueba",
+        "address": "prueba",
+        "email": "pruebap8@operadorBCQ.com",
+        "operatorId": 0,
+        "operatorName": "OperadorBCQ",
+        "__v": 0
+    },
+    {
+        "_id": "5f9ca89c2ab6e1001521260b",
+        "identification": 4212989800,
+        "name": "Hedley Hatfield",
+        "address": "Cra 54 # 45 -67",
+        "email": "prueba@mymail.com",
+        "operatorId": 0,
+        "operatorName": "Operador Ciudadano",
+        "__v": 0
+    }
+]

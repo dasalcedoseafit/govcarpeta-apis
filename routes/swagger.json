@@ -1,0 +1,384 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Apis for Gov Carpeta",
+        "version": "1.0"
+    },
+    "host": "https://govcarpeta-apis-4905ff3c005b.herokuapp.com",
+    "basePath": "/",
+    "schemes": [
+        "https",
+        "http"
+    ],
+    "paths": {
+        "/apis/registerCitizen": {
+            "post": {
+                "description": "Notifica el registro exitoso de un ciudadno ó empresa en el Operador",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "citizen",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "required": [
+                                "id",
+                                "name",
+                                "address",
+                                "email",
+                                "operatorId",
+                                "operatorName"
+                            ],
+                            "properties": {
+                                "id": {
+                                    "type": "number",
+                                    "description": "Identificacion del Ciudadano ó Empresa",
+                                    "example": 1234567890
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "Nombre del Ciudadano ó Empresa",
+                                    "example": "Carlos Andres Caro"
+                                },
+                                "address": {
+                                    "type": "string",
+                                    "description": "Direccion del Ciudadano ó Empresa",
+                                    "example": "Cra 54 # 45 -67"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "description": "Email del Ciudadano ó Empresa",
+                                    "example": "caro@mymail.com"
+                                },
+                                "operatorId": {
+                                    "type": "string",
+                                    "description": "Identificacion del Operador",
+                                    "example": "65ca0a00d833e984e2608756"
+                                },
+                                "operatorName": {
+                                    "type": "string",
+                                    "description": "Nombre del Operador",
+                                    "example": "Operador Ciudadano"
+                                }
+                            }
+                        },
+                        "description": "Identificacion del Ciudadano ó Empresa"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created: Ciudadano con id: 123 se ha relacionado con OPerador abc. Creado exitosamente"
+                    },
+                    "501": {
+                        "description": "failed: Error al crear Ciudadano con id: 123 ya se encuentra registrado en la carpeta ciudadana"
+                    },
+                    "500": {
+                        "description": "failed : Application Error.."
+                    }
+                }
+            }
+        },
+        "/apis/unregisterCitizen": {
+            "delete": {
+                "description": "Notifica que se ha hecho el desligue exitoso de un ciudadano ó empresa en el Operador",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "citizen",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "required": [
+                                "id",
+                                "operatorId",
+                                "operatorName"
+                            ],
+                            "properties": {
+                                "id": {
+                                    "type": "number",
+                                    "description": "Identificacion del Ciudadano ó Empresa",
+                                    "example": 1234567890
+                                },
+                                "operatorId": {
+                                    "type": "string",
+                                    "description": "Identificacion del Operador",
+                                    "example": "65ca0a00d833e984e2608756"
+                                },
+                                "operatorName": {
+                                    "type": "string",
+                                    "description": "Nombre del Operador",
+                                    "example": "Operador Ciudadano"
+                                }
+                            }
+                        },
+                        "description": "Identificacion del Ciudadano ó Empresa"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Deleted"
+                    },
+                    "204": {
+                        "description": "Not Content"
+                    },
+                    "501": {
+                        "description": "failed : Wrong Parameters.."
+                    },
+                    "500": {
+                        "description": "failed : Application Error.."
+                    }
+                }
+            }
+        },
+        "/apis/authenticateDocument": {
+            "put": {
+                "description": "Solicitud  de atenticacion de documentos",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "document",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "required": [
+                                "idCitizen",
+                                "UrlDocument",
+                                "documentTitle"
+                            ],
+                            "properties": {
+                                "idCitizen": {
+                                    "type": "number",
+                                    "description": "Identificacion del Ciudadano ó Empresa",
+                                    "example": 1234567890
+                                },
+                                "UrlDocument": {
+                                    "type": "string",
+                                    "description": "Url del Documento a ser autenticado",
+                                    "example": "https://<bucket-name>.s3.amazonaws.com/bae728c7-a7a3-4942-b9b5-3ca0…-b91126bb3d8f.image.jpg?AWSAccessKeyId=<AWS_ACCESS_KEY>&Expires=145671"
+                                },
+                                "documentTitle": {
+                                    "type": "string",
+                                    "description": "Nombre del Documento",
+                                    "example": "Diploma Grado"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": "Application/json",
+                        "schema": {
+                            "type": "string",
+                            "example": "El documento: Diploma Grado del ciudadano 1234567890 ha sido autenticado exitosamente"
+                        }
+                    },
+                    "204": {
+                        "description": "Not Content"
+                    },
+                    "501": {
+                        "description": "failed : Wrong Parameters.."
+                    },
+                    "500": {
+                        "description": "failed : Application Error.."
+                    }
+                }
+            }
+        },
+        "/apis/validateCitizen/{id}": {
+            "get": {
+                "description": "Validacion de un Ciudadano para la inscripcion en un operador de carpeta ciudadana..",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "number",
+                        "required": true,
+                        "description": "Identificacion del Ciudadano"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "204": {
+                        "description": "Not Content"
+                    },
+                    "501": {
+                        "description": "failed : Wrong Parameters.."
+                    },
+                    "500": {
+                        "description": "failed : Application Error.."
+                    }
+                }
+            }
+        },
+        "/apis/registerOperator": {
+            "post": {
+                "description": "Solicita el registro de un Operador",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "operator",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "required": [
+                                "nameOperator",
+                                "adress",
+                                "contactMail",
+                                "participants"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "description": "Nombre del Operador",
+                                    "example": "Operador 123"
+                                },
+                                "address": {
+                                    "type": "string",
+                                    "description": "Direccion del Operador",
+                                    "example": "Cra 34 # 35 -67"
+                                },
+                                "contactMail": {
+                                    "type": "string",
+                                    "description": "Email de contacto del operador",
+                                    "example": "info@operador123.com"
+                                },
+                                "participants": {
+                                    "type": "array",
+                                    "participants": {
+                                        "type": "string"
+                                    },
+                                    "description": "Nombres de los participantes del equipo",
+                                    "example": [
+                                        "Nombre 1",
+                                        "Nombre 2",
+                                        "Nombre 3"
+                                    ]
+                                }
+                            }
+                        },
+                        "description": "Datos para crear y/o dar de alta un operador"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "content": "Application/json",
+                        "schema": {
+                            "type": "string",
+                            "example":"65ca0a00d833e984e2608756" 
+                        }
+                    },
+                    "501": {
+                        "description": "failed : Wrong Parameters.."
+                    },
+                    "500": {
+                        "description": "failed : Application Error.."
+                    }
+                }
+            }
+        },
+        "/apis/registerTransferEndPoint": {
+            "put": {
+                "description": "Registra el endPoint de un operador para aceptar trasferencias de otro operador",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "transferOperator",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "required": [
+                                "idOperator",
+                                "endPoint"
+                            ],
+                            "properties": {
+                                "idOperator": {
+                                    "type": "string",
+                                    "description": "Identificacion delOperador",
+                                    "example": "65ca0a00d833e984e2608756"
+                                },
+                                "endPoint": {
+                                    "type": "string",
+                                    "description": "endpoint para aceptar las transferencias de ciudadanos",
+                                    "example": " http://mioperador.com/api/transferCitizen"
+                                },
+                                "endPointConfirm": {
+                                    "type": "string",
+                                    "description": "endpoint para confirmar las transferencias de ciudadanos",
+                                    "example": " http://mioperador.com/api/transferCitizenConfirm"
+                                }
+                            }
+                        },
+                        "description": " Registro de Apis para Transfer"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Updated"
+                    },
+                    "501": {
+                        "description": "failed : Wrong Parameters.."
+                    },
+                    "500": {
+                        "description": "failed : Application Error.."
+                    }
+                }
+            }
+        },
+        "/apis/getOperators": {
+            "get": {
+                "description": "Regresa la lista de operadores con sus datos",
+                "responses": {
+                    "200": {
+                        "content": "Application/json",
+                        "schema": {
+                            "type": "array",
+                            "operators": {
+                                "type": "object",
+                                "properties": {
+                                    "OperatorId": {
+                                        "type": "string"
+                                    },
+                                    "operatorName": {
+                                        "type": "string"
+                                    },
+                                    "transferAPIURL": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "example": [
+                                {
+                                    "OperatorId": "65ca0a00d833e984e2608756",
+                                    "OperatorName": "Operador 123",
+                                    "transferAPIURL": "http://mioperador.com/api/transferCitizen"
+                                },
+                                {
+                                    "OperatorId": "65ca0a00d833e984e2608758",
+                                    "OperatorName": "Operador 456",
+                                    "transferAPIURL": "http://mioperador.com/api/transferCitizen"
+                                },
+                                {
+                                    "OperatorId": "65ca0a00d833e984e2608761",
+                                    "OperatorName": "Operador 789",
+                                    "transferAPIURL": "http://mioperador.com/api/transferCitizen"
+                                }
+                            ]
+                        },
+                        "description": "ok"
+                    },
+                    "501": {
+                        "description": "failed : Wrong Parameters.."
+                    },
+                    "500": {
+                        "description": "failed : Application Error.."
+                    }
+                }
+            }
+        }
+    }
+}
