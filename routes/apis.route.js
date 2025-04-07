@@ -11,7 +11,7 @@ allowedOrigins=[
   'http://localhost:5000',
   'capacitor://localhost',
   '*',
-  'https://govcarpeta-apis-83e1c996379d.herokuapp.com'
+  'https://govcarpeta-apis-4905ff3c005b.herokuapp.com'
 ]
 
 const corsOptions = {
