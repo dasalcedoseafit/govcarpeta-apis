@@ -4,7 +4,7 @@
         "title": "Apis for Gov Carpeta",
         "version": "1.0"
     },
-    "host": "https://govcarpeta-apis-4905ff3c005b.herokuapp.com",
+    "host": "govcarpeta-apis-4905ff3c005b.herokuapp.com",
     "basePath": "/",
     "schemes": [
         "https",
