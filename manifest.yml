@@ -1,6 +1,6 @@
 applications:
 - name: govCarpetaApp
-  memory: 256M
+  memory: 128M
   disk_quota: 512M
   path: .
   buildpack: nodejs_buildpack
